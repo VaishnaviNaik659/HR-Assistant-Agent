@@ -1,0 +1,98 @@
+Follow the steps below to run the HR Policy & Leave Assistant on your computer.
+
+✅ 1. Download / Clone the Project
+
+If using Git:
+
+git clone https://github.com/VaishnaviNaik659/HR-Assistant-Agent.git
+
+
+Or simply download the ZIP from GitHub and extract it.
+
+✅ 2. Make sure these files exist in the folder
+
+Your project folder should contain:
+
+app.py
+hr_agent_system_prompt.txt
+requirements.txt
+
+✅ 3. Install Python (if not installed)
+
+Install Python 3.8+ from:
+
+👉 https://www.python.org/downloads/
+
+During installation:
+✔ Check the box “Add Python to PATH”
+
+✅ 4. Install Dependencies
+
+Open Terminal / CMD / PowerShell inside your project folder:
+
+pip install -r requirements.txt
+
+
+Since your project only needs Streamlit, the file contains:
+
+streamlit
+
+
+This installs Streamlit in seconds.
+
+✅ 5. Run the App
+
+Run this command:
+
+streamlit run app.py
+
+✅ 6. Open in Browser
+
+Streamlit will automatically open the app in your default browser.
+
+If not, visit manually:
+
+👉 http://localhost:8501
+
+📌 7. Use the HR Agent
+
+You will see:
+
+🧑‍💼 HR Policy & Leave Assistant
+Ask about leave, benefits, working hours, or simple HR queries.
+
+
+Type questions such as:
+
+“leave policy”
+
+“what are the total leaves”
+
+“benefits”
+
+“working hours”
+
+“dress code”
+
+“wfh policy”
+
+“pf and gratuity”
+
+The agent will respond instantly using the logic in app.py + the data in your hr_agent_system_prompt.txt.
+
+It should look like : https://hr-assistant-agent-caybgt6jb22gvzpicwq5cz.streamlit.app/
+
+🔍 Troubleshooting
+❌ Error: “hr_agent_system_prompt.txt not found”
+
+Make sure the TXT file is in the same folder as app.py.
+
+❌ Streamlit does not open browser
+
+Just visit:
+
+http://localhost:8501
+
+❌ Streamlit welcome screen appears
+
+Just press Enter.
