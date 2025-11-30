@@ -200,9 +200,26 @@ def make_friendly(text: str) -> str:
 def answer_question(question: str, sections):
     """
     Main routing logic to pick the right section or message.
-    Now includes a friendly rewrite layer.
+    Now includes a friendly rewrite layer and special handling for 'policy'.
     """
     q = question.lower().strip()
+
+    # 0) Very general "policy" queries -> give an overview, not a single section
+    if q in ["policy", "policies", "company policy", "company policies"] or (
+        "policy" in q and "all" in q
+    ):
+        return (
+            "Here’s a quick overview of the main company policies 😊:\n\n"
+            "• **Leave Policies** – sick, casual, earned, maternity, paternity, half-day.\n"
+            "• **Benefits Policies** – health insurance, PF, gratuity, wellness benefits.\n"
+            "• **Working Hours & WFH** – daily working hours, breaks, overtime, remote work rules.\n"
+            "• **Office Conduct Policies** – dress code, behaviour, security, access.\n"
+            "• **Payroll & Attendance** – payslips, attendance correction, salary queries.\n"
+            "• **Travel & Reimbursement** – official travel, claims, and allowable expenses.\n"
+            "• **Disciplinary Policies** – misconduct, warnings, and grievance handling.\n\n"
+            "If you want details of any specific policy, you can ask like: "
+            "“leave policy”, “benefits policy”, “working hours policy”, or “dress code policy”. 💚"
+        )
 
     # 1) Personal leave balance
     if is_personal_balance_question(q):
@@ -281,4 +298,5 @@ else:
 
         st.markdown("### Answer")
         st.markdown(formatted)
+
 
