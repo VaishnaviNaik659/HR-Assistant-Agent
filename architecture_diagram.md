@@ -23,3 +23,72 @@ Streamlit UI (app.py)
          4. Apply friendly rewriter to make answer conversational
 
          5. Display answer in the UI
+
+
+
+
+                   ┌──────────────────────┐
+                   │        User          │
+                   │  (Browser / Client)  │
+                   └──────────┬───────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │ Streamlit UI (Frontend) │
+                │ • Text input box        │
+                │ • Displays answer       │
+                └──────────┬──────────────┘
+                              │ User question
+                              ▼
+              ┌──────────────────────────────────┐
+              │ HR Agent Logic (app.py Backend) │
+              │----------------------------------│
+              │ 1. Detect type of question       │
+              │    • Leave                       │
+              │    • Benefits                    │
+              │    • Working hours               │
+              │    • Salary / Payslip            │
+              │    • WFH / Dress code / etc.     │
+              │                                  │
+              │ 2. Routing rules                 │
+              │    • Handle leave balance        │
+              │    • Handle leave calculations   │
+              │    • Match best policy section   │
+              │                                  │
+              │ 3. Friendly rewrite layer        │
+              │    • Makes answers conversational│
+              └──────────┬───────────────────────┘
+                              │
+                 Looks up required info
+                              │
+                              ▼
+           ┌────────────────────────────────────────┐
+           │ HR Knowledge Base (Local Text File)    │
+           │        hr_agent_system_prompt.txt       │
+           │----------------------------------------│
+           │ Contains:                               │
+           │  • Leave Policy                         │
+           │  • Benefits & Insurance                 │
+           │  • Working Hours / Breaks / WFH         │
+           │  • Payroll / Attendance                 │
+           │  • Office Policies                      │
+           │  • Assistant behaviour rules            │
+           └───────────────────┬────────────────────┘
+                               │
+                          Returns matching policy
+                               │
+                               ▼
+              ┌──────────────────────────────────┐
+              │ HR Agent Logic                   │
+              │ • Formats the text               │
+              │ • Applies friendly tone          │
+              │ • Adds helpful context           │
+              └──────────┬──────────────────────┘
+                               │
+                        Final Response
+                               │
+                               ▼
+            ┌────────────────────────────────────┐
+            │ Streamlit UI (Frontend)            │
+            │ • Shows answer in nice formatting  │
+            └────────────────────────────────────┘
