@@ -1,70 +1,170 @@
-# 🧑‍💼 HR Policy & Leave Assistant
+🧑‍💼 HR Policy & Leave Assistant
 
-A simple, friendly HR assistant that answers employee questions about leave, benefits, working hours, and basic company policies.  
-The agent runs completely locally using a plain text HR policy file and a lightweight rule-based + keyword matching system (no external APIs).
+A lightweight, offline HR Assistant that answers employee queries about leave, benefits, working hours, policies, and basic HR procedures using a simple Streamlit interface and a local text-based knowledge base.
 
+No external APIs or AI model calls — fully private, fast, and local.
 
-## 🌟 Overview
+📌 Overview
 
-This project is a **HR Assistant Agent** that:
+The HR Policy & Leave Assistant is a streamlined rule-based assistant built to provide quick, friendly, and accurate responses to HR-related queries.
 
-- Answers common HR queries: **leave policy, total leaves, benefits, working hours, salary issues, WFH rules, dress code, etc.**
-- Uses a simple text file `hr_agent_system_prompt.txt` as the **knowledge base**.
-- Provides **friendly, human-like responses** instead of rigid policy dumps.
-- Supports **basic leave calculations** (e.g., total leaves per year, earned leave after X months).
-- Runs as a **Streamlit web app**, easy to demo and deploy.
+Instead of using complex LLMs or API calls, this project relies on:
 
-The primary use case is to act as a **frontline virtual HR assistant** for answering policy, leave & benefits queries quickly and consistently.
+A structured HR Knowledge Base stored in hr_agent_system_prompt.txt
 
+A custom logic engine that detects question types
 
-## ✨ Features
+A friendly rewrite layer that returns conversational, HR-friendly answers
 
-- ✅ **Policy Q&A**  
-  - Leave policy (sick, casual, earned, maternity, paternity, half-day)  
-  - Benefits, health insurance, PF, gratuity  
-  - Working hours, breaks, overtime, WFH  
-  - Payroll, salary, attendance corrections  
-  - General office policies, dress code, behavior, remote work, travel & reimbursements  
+A lightweight Streamlit UI for interaction
 
-- ✅ **Friendly Answers**  
-  - Automatically rewrites raw policy text into a **gentle, clear summary**  
-  - Uses simple language and soft tone (no harsh wording)  
+This makes the system secure, offline, and suitable for internal HR usage or academic demonstration.
 
-- ✅ **Basic Leave Calculations**  
-  - Total yearly leave (sick + casual + earned)  
-  - Earned leave after X months  
+✨ Features
+✔ HR Query Support
 
-- ✅ **Personal Balance Awareness**  
-  - If user asks: “How many leaves do I have now?” →  
-    Agent responds: it **cannot see personal balance** and tells user to check HR portal.
+Leave policy (Sick, Casual, Earned, Maternity, Paternity, Half-Day)
 
-- ✅ **Fast & Lightweight**  
-  - No machine learning models at runtime  
-  - No external APIs or internet calls  
-  - Works only with Python + Streamlit + a text file
+Working hours, breaks, overtime, WFH rules
 
+Benefits (Health Insurance, PF, Gratuity, Wellness programs)
 
-## ⚠️ Limitations
+Payroll basics (Payslips, attendance correction)
 
-- ❌ Does **not** integrate with real HR systems (no live leave balance, no real payroll data).
-- ❌ Only knows what is written in `hr_agent_system_prompt.txt`.  
-  If a policy is missing there, the agent cannot answer it.
-- ❌ “AI” is rule-based + keyword search. It does not generate new policies or learn automatically.
-- ❌ No authentication / employee identification. This is **not** a production HR tool, just a demo assistant.
+Office policies (Dress code, behavior, access, general conduct)
 
+✔ Leave Calculations
 
-## 🧱 Tech Stack
+Total leaves in a year
 
-- **Language:** Python 3.x  
-- **Frontend / UI:** [Streamlit](https://streamlit.io/)  
-- **Knowledge Base:** Local `.txt` file (`hr_agent_system_prompt.txt`)  
-- **Logic:**  
-  - Simple **section parser** (splits HR text into sections like "Leave Policy", "Benefits")  
-  - Rule-based routing to sections  
-  - Keyword matching for fallback  
-  - Small “friendly rewriter” layer for responses  
+Earned leave after X months
 
-> 🚫 **No external APIs** (no OpenAI, no databases). Entirely offline and self-contained.
+Remaining leave if user took X casual/sick/earned days
 
+✔ Friendly HR-Style Answers
 
+All responses are rewritten to be warm, polite, and employee-friendly.
 
+✔ Completely Offline
+
+No network, no LLM calls, no sensitive data exposure.
+
+✔ Fast Response
+
+Uses simple rule-based matching and keyword scoring (no heavy NLP models).
+
+⚠️ Limitations
+
+Does NOT connect to real HR systems or databases
+
+Cannot fetch personal user leave balance
+
+Depends fully on the information in hr_agent_system_prompt.txt
+
+Not a real chatbot — no memory of past questions
+
+Limited NLP understanding (keyword-based logic)
+
+🧱 Tech Stack
+Frontend
+
+Streamlit: Web-based UI
+
+Backend
+
+Python logic functions
+
+Custom keyword routing
+
+Friendly text rewriting engine
+
+Knowledge Base
+
+Plain text file: hr_agent_system_prompt.txt
+
+APIs used
+
+None
+(Offline system — no AI endpoints, no LLM calls)
+
+🛠️ Setup & Run Instructions
+1. Clone or download the project
+git clone https://github.com/<your-username>/hr-policy-leave-assistant.git
+cd hr-policy-leave-assistant
+
+2. Install required dependencies
+pip install -r requirements.txt
+
+requirements.txt contains:
+streamlit
+
+3. Run the Streamlit app
+streamlit run app.py
+
+4. Open in browser
+
+If it doesn’t open automatically:
+
+👉 Visit: http://localhost:8501
+
+5. Ask any HR-related question
+
+Examples:
+
+“leave policy”
+
+“total leaves in a year”
+
+“working hours”
+
+“pf policy”
+
+“dress code”
+
+“wfh rules”
+
+📂 Project Structure
+├── app.py
+├── hr_agent_system_prompt.txt
+├── requirements.txt
+└── README.md
+
+🚀 Potential Improvements
+
+These can be future upgrades or features:
+
+🔹 1. Integrate a real LLM
+
+Use OpenAI, Gemini, or Claude to make answers more conversational and better at understanding natural language.
+
+🔹 2. Add authentication
+
+Employees can log in → Assistant shows personal leave balances.
+
+🔹 3. Connect to HR systems
+
+Fetch real:
+
+Leave balance
+
+Upcoming holidays
+
+Payslips
+
+Attendance logs
+
+🔹 4. Admin Dashboard
+
+HR team can update policies from a UI instead of editing the text file.
+
+🔹 5. Multi-language Support
+
+Add translations (Kannada, Hindi, regional languages).
+
+🔹 6. Chat History
+
+Allow multi-turn conversations.
+
+🔹 7. Upload PDF HR policies
+
+Automatically convert into chunks and update the knowledge base.
