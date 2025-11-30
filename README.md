@@ -3,7 +3,6 @@
 A simple, friendly HR assistant that answers employee questions about leave, benefits, working hours, and basic company policies.  
 The agent runs completely locally using a plain text HR policy file and a lightweight rule-based + keyword matching system (no external APIs).
 
----
 
 ## 🌟 Overview
 
@@ -17,7 +16,6 @@ This project is a **HR Assistant Agent** that:
 
 The primary use case is to act as a **frontline virtual HR assistant** for answering policy, leave & benefits queries quickly and consistently.
 
----
 
 ## ✨ Features
 
@@ -45,7 +43,6 @@ The primary use case is to act as a **frontline virtual HR assistant** for answe
   - No external APIs or internet calls  
   - Works only with Python + Streamlit + a text file
 
----
 
 ## ⚠️ Limitations
 
@@ -55,7 +52,6 @@ The primary use case is to act as a **frontline virtual HR assistant** for answe
 - ❌ “AI” is rule-based + keyword search. It does not generate new policies or learn automatically.
 - ❌ No authentication / employee identification. This is **not** a production HR tool, just a demo assistant.
 
----
 
 ## 🧱 Tech Stack
 
