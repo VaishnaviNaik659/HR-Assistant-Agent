@@ -1,10 +1,13 @@
 🧑‍💼 HR Policy & Leave Assistant
 
+
 A lightweight, offline HR Assistant that answers employee queries about leave, benefits, working hours, policies, and basic HR procedures using a simple Streamlit interface and a local text-based knowledge base.
 
 No external APIs or AI model calls — fully private, fast, and local.
 
+---
 📌 Overview
+
 
 The HR Policy & Leave Assistant is a streamlined rule-based assistant built to provide quick, friendly, and accurate responses to HR-related queries.
 
@@ -20,6 +23,8 @@ A lightweight Streamlit UI for interaction
 
 This makes the system secure, offline, and suitable for internal HR usage or academic demonstration.
 
+
+---
 ✨ Features
 ✔ HR Query Support
 
@@ -53,6 +58,8 @@ No network, no LLM calls, no sensitive data exposure.
 
 Uses simple rule-based matching and keyword scoring (no heavy NLP models).
 
+
+---
 ⚠️ Limitations
 
 Does NOT connect to real HR systems or databases
@@ -65,6 +72,8 @@ Not a real chatbot — no memory of past questions
 
 Limited NLP understanding (keyword-based logic)
 
+
+---
 🧱 Tech Stack
 Frontend
 
@@ -87,6 +96,7 @@ APIs used
 None
 (Offline system — no AI endpoints, no LLM calls)
 
+---
 🛠️ Setup & Run Instructions
 1. Clone or download the project
 git clone https://github.com/<your-username>/hr-policy-leave-assistant.git
@@ -123,12 +133,16 @@ Examples:
 
 “wfh rules”
 
+
+---
 📂 Project Structure
 ├── app.py
 ├── hr_agent_system_prompt.txt
 ├── requirements.txt
 └── README.md
 
+
+---
 🚀 Potential Improvements
 
 These can be future upgrades or features:
